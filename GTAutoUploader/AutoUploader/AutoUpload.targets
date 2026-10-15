@@ -1,0 +1,15 @@
+<Project>
+  <!-- In your mod's .csproj (last line before </Project>):
+       <Import Project="C:\path\to\AutoUploader\AutoUpload.targets" />
+       Remove any old AutoInject / scripts-folder copy target. -->
+  <PropertyGroup>
+    <GTDir Condition="'$(GTDir)'==''">C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</GTDir>
+  </PropertyGroup>
+
+  <Target Name="AutoUpload" AfterTargets="Build" Condition="Exists('$(GTDir)\BepInEx')">
+    <MakeDir Directories="$(GTDir)\BepInEx\autouploader" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GTDir)\BepInEx\autouploader"
+          Retries="5" RetryDelayMilliseconds="300" ContinueOnError="true" />
+    <Message Importance="high" Text="[AutoUpload] $(TargetFileName) -> $(GTDir)\BepInEx\autouploader" />
+  </Target>
+</Project>

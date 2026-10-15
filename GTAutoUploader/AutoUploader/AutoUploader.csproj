@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>AutoUploader</AssemblyName>
+    <RootNamespace>AutoUploader</RootNamespace>
+    <DebugType>none</DebugType>
+    <GTDir Condition="'$(GTDir)'==''">C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</GTDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Unity.Collections"><HintPath>$(GTDir)\Gorilla Tag_Data\Managed\Unity.Collections.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx"><HintPath>$(GTDir)\BepInEx\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GTDir)\BepInEx\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GTDir)\Gorilla Tag_Data\Managed\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GTDir)\Gorilla Tag_Data\Managed\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GTDir)\Gorilla Tag_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+  <!-- Installs AutoUploader itself into plugins (one-time; it is NOT hot-reloaded) -->
+  <Target Name="InstallAutoUploader" AfterTargets="Build" Condition="Exists('$(GTDir)\BepInEx\plugins')">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GTDir)\BepInEx\plugins" ContinueOnError="true" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="Utilla" Condition="Exists('$(GTDir)\BepInEx\plugins\Utilla\Utilla.dll')">
+      <HintPath>$(GTDir)\BepInEx\plugins\Utilla\Utilla.dll</HintPath><Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
