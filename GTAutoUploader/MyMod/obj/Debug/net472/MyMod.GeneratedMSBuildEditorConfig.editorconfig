@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = MyMod
-build_property.ProjectDir = C:\Users\grind\Downloads\GTAutoUploader\GTAutoUploader\MyMod\
+build_property.ProjectDir = C:\Users\grind\OneDrive\Documents\GitHub\Injector-GTAutoUploader\GTAutoUploader\MyMod\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

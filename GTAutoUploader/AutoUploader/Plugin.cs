@@ -16,16 +16,15 @@ namespace AutoUploader
     /// Watches BepInEx\autouploader (+ optional extra folders). Any plugin DLL that appears/changes
     /// (Visual Studio, Rider, dotnet build...) is loaded into the running game, replacing the old copy.
     [BepInPlugin("com.yourname.autouploader", "AutoUploader", "1.0.0")]
-    [BepInDependency("org.legoandmars.gorillatag.utilla")]
     public class Plugin : BaseUnityPlugin
     {
         // never treat dependency DLLs as mods
         static readonly string[] Ignore =
-            { "0Harmony", "BepInEx", "Mono.", "System.", "UnityEngine", "Assembly-CSharp", "Utilla", "Photon", "Newtonsoft", "AutoUploader" };
+            { "0Harmony", "BepInEx", "Mono.", "System.", "UnityEngine", "Assembly-CSharp", "Photon", "Newtonsoft", "AutoUploader" };
 
         class Loaded { public GameObject Go; public List<string> Guids = new List<string>(); }
 
-        ConfigEntry<bool> loadOnStartup, activeOutsideRooms, kickFromVanilla;
+        ConfigEntry<bool> loadOnStartup, activeOutsideRooms;
         ConfigEntry<string> extraFolders;
 
         readonly List<FileSystemWatcher> watchers = new List<FileSystemWatcher>();
@@ -39,8 +38,7 @@ namespace AutoUploader
         {
             loadOnStartup      = Config.Bind("General", "LoadOnStartup", true, "Load DLLs already in the folder when the game starts");
             extraFolders       = Config.Bind("General", "ExtraFolders", "", "Semicolon-separated extra folders to watch, e.g. your project's bin\\Debug\\net472");
-            activeOutsideRooms = Config.Bind("Lobby", "ActiveOutsideRooms", false, "Keep uploaded mods enabled while not in any room");
-            kickFromVanilla    = Config.Bind("Lobby", "KickFromVanillaLobby", true, "Disconnect when a mod is injected/enabled while in a NON-modded lobby");
+            activeOutsideRooms = Config.Bind("Lobby", "ActiveOutsideRooms", true, "Keep uploaded mods enabled while not in any room");
 
             var dirs = new List<string> { Path.Combine(Paths.BepInExRootPath, "autouploader") };
             dirs.AddRange(extraFolders.Value.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()));
@@ -185,7 +183,7 @@ namespace AutoUploader
         void Guard()
         {
             var ns = NetworkSystem.Instance;
-            if (ns.InRoom && !InModdedLobby() && kickFromVanilla.Value)
+            if (ns.InRoom)
             {
                 Logger.LogWarning("Not a modded lobby - leaving.");
                 ns.ReturnToSinglePlayer();                              // older builds: PhotonNetwork.Disconnect();
@@ -232,3 +230,4 @@ namespace AutoUploader
         }
     }
 }
+//hi

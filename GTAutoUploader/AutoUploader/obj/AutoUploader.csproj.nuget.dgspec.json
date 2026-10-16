@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grind\\Downloads\\GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj": {}
+    "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grind\\Downloads\\GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj": {
+    "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grind\\Downloads\\GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj",
+        "projectUniqueName": "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj",
         "projectName": "AutoUploader",
-        "projectPath": "C:\\Users\\grind\\Downloads\\GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj",
+        "projectPath": "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj",
         "packagesPath": "C:\\Users\\grind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grind\\Downloads\\GTAutoUploader\\GTAutoUploader\\AutoUploader\\obj\\",
+        "outputPath": "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\AutoUploader\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\grind\\AppData\\Roaming\\NuGet\\NuGet.Config"
