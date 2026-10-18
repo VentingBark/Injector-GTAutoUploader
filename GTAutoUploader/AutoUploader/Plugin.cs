@@ -187,7 +187,7 @@ namespace AutoUploader
         {
             var ns = NetworkSystem.Instance;
             if (ns.InRoom)
-            if (!injected && !InModdedLobby())
+            if (injected && !InModdedLobby())
             {
                 Logger.LogWarning("Not a modded lobby - leaving.");
                 ns.ReturnToSinglePlayer();                              // older builds: PhotonNetwork.Disconnect();
