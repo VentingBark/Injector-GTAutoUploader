@@ -32,6 +32,8 @@ namespace AutoUploader
         readonly Dictionary<string, Loaded> loaded = new Dictionary<string, Loaded>();
         readonly HashSet<string> busy = new HashSet<string>();
         bool ready, wasInRoom;
+
+        bool injected;
         float nextTick;
 
         void Awake()
@@ -153,6 +155,7 @@ namespace AutoUploader
                     }
 
                     loaded[path] = entry;
+                    injected = true;
                     Logger.LogInfo("Injected " + name + " (" + entry.Guids.Count + " plugin(s))");
                     Guard();                                            // lobby check on EVERY injection
                 }
@@ -184,6 +187,7 @@ namespace AutoUploader
         {
             var ns = NetworkSystem.Instance;
             if (ns.InRoom)
+            if (!injected && !InModdedLobby())
             {
                 Logger.LogWarning("Not a modded lobby - leaving.");
                 ns.ReturnToSinglePlayer();                              // older builds: PhotonNetwork.Disconnect();

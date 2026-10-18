@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\MyMod\\MyMod.csproj",
-      "projectName": "MyMod",
-      "projectPath": "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\MyMod\\MyMod.csproj",
+      "projectUniqueName": "C:\\Users\\grind\\Downloads\\Injector-GTAutoUploader\\Injector-GTAutoUploader-main\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj",
+      "projectName": "AutoUploader",
+      "projectPath": "C:\\Users\\grind\\Downloads\\Injector-GTAutoUploader\\Injector-GTAutoUploader-main\\GTAutoUploader\\AutoUploader\\AutoUploader.csproj",
       "packagesPath": "C:\\Users\\grind\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\grind\\OneDrive\\Documents\\GitHub\\Injector-GTAutoUploader\\GTAutoUploader\\MyMod\\obj\\",
+      "outputPath": "C:\\Users\\grind\\Downloads\\Injector-GTAutoUploader\\Injector-GTAutoUploader-main\\GTAutoUploader\\AutoUploader\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\grind\\AppData\\Roaming\\NuGet\\NuGet.Config"

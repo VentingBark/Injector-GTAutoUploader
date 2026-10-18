@@ -12,3 +12,10 @@ C:\Users\grind\OneDrive\Documents\GitHub\Injector-GTAutoUploader\GTAutoUploader\
 C:\Users\grind\OneDrive\Documents\GitHub\Injector-GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.AssemblyInfo.cs
 C:\Users\grind\OneDrive\Documents\GitHub\Injector-GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.csproj.CoreCompileInputs.cache
 C:\Users\grind\OneDrive\Documents\GitHub\Injector-GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.dll
+C:\Users\grind\Downloads\Injector-GTAutoUploader\Injector-GTAutoUploader\GTAutoUploader\GTAutoUploader\AutoUploader\bin\Debug\net472\AutoUploader.dll
+C:\Users\grind\Downloads\Injector-GTAutoUploader\Injector-GTAutoUploader\GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.csproj.AssemblyReference.cache
+C:\Users\grind\Downloads\Injector-GTAutoUploader\Injector-GTAutoUploader\GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grind\Downloads\Injector-GTAutoUploader\Injector-GTAutoUploader\GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.AssemblyInfoInputs.cache
+C:\Users\grind\Downloads\Injector-GTAutoUploader\Injector-GTAutoUploader\GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.AssemblyInfo.cs
+C:\Users\grind\Downloads\Injector-GTAutoUploader\Injector-GTAutoUploader\GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.csproj.CoreCompileInputs.cache
+C:\Users\grind\Downloads\Injector-GTAutoUploader\Injector-GTAutoUploader\GTAutoUploader\GTAutoUploader\AutoUploader\obj\Debug\net472\AutoUploader.dll
