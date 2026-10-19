@@ -25,6 +25,7 @@ NOTES
 - AutoUploader itself isn't hot-reloaded; restart the game after rebuilding it.
 - Use OnEnable/OnDisable/OnDestroy to clean up patches, or reloads stack.
 - Don't also put your mod in BepInEx\plugins or \scripts (double load).
+-This product is not affiliated with Another Axiom Inc. or its videogames Gorilla Tag and Orion Drift and is not endorsed or otherwise sponsored by Another Axiom. Portions of the materials contained herein are property of Another Axiom. ©2021 Another Axiom Inc.
 
 CREDIT
 - Most of the mod was made by Claude AI / Anthropic AI
