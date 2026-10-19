@@ -26,6 +26,7 @@ namespace AutoUploader
 
         ConfigEntry<bool> loadOnStartup, activeOutsideRooms;
         ConfigEntry<string> extraFolders;
+        ConfigEntry<bool> publickicks;
 
         readonly List<FileSystemWatcher> watchers = new List<FileSystemWatcher>();
         readonly ConcurrentDictionary<string, DateTime> pending = new ConcurrentDictionary<string, DateTime>(); // path -> last event (UTC)
@@ -33,14 +34,16 @@ namespace AutoUploader
         readonly HashSet<string> busy = new HashSet<string>();
         bool ready, wasInRoom;
 
+
         bool injected;
         float nextTick;
 
         void Awake()
         {
-            loadOnStartup      = Config.Bind("General", "LoadOnStartup", true, "Load DLLs already in the folder when the game starts");
-            extraFolders       = Config.Bind("General", "ExtraFolders", "", "Semicolon-separated extra folders to watch, e.g. your project's bin\\Debug\\net472");
-            activeOutsideRooms = Config.Bind("Lobby", "ActiveOutsideRooms", true, "Keep uploaded mods enabled while not in any room");
+            loadOnStartup      = Config.Bind("General", "LoadOnStartup", true, "Load DLLs already in the folder when the game starts (All Config Requires Restart)");
+            extraFolders       = Config.Bind("General", "ExtraFolders", "", "Semicolon-separated extra folders to watch, e.g. your project's bin\\Debug\\net472 (All Config Requires Restart)");
+            activeOutsideRooms = Config.Bind("Lobby", "ActiveOutsideRooms", true, "Keep uploaded mods enabled while not in any room (All Config Requires Restart)");
+            publickicks = Config.Bind("Lobby", "PublicKicks", true, "Allow use of publics when having mods injected (All Config Requires Restart)");
 
             var dirs = new List<string> { Path.Combine(Paths.BepInExRootPath, "autouploader") };
             dirs.AddRange(extraFolders.Value.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()));
@@ -189,8 +192,11 @@ namespace AutoUploader
             if (ns.InRoom)
             if (injected && !InModdedLobby())
             {
-                Logger.LogWarning("Not a modded lobby - leaving.");
-                ns.ReturnToSinglePlayer();                              // older builds: PhotonNetwork.Disconnect();
+                if (publickicks.Value)
+                {
+                    Logger.LogWarning("Not a modded lobby - leaving.");
+                    ns.ReturnToSinglePlayer();                    // older builds: PhotonNetwork.Disconnect();
+                }
             }
             Apply();
         }
